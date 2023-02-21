@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Body>
+        <fjs1:getAccountDetailResponseFlow xmlns:fjs1="http://soprabanking.com/amplitude">
+            <fjs1:responseHeader>
+                <fjs1:requestId>1</fjs1:requestId>
+                <fjs1:responseId>563</fjs1:responseId>
+                <fjs1:timestamp>2023-02-16T10:31:45.33400-05:00</fjs1:timestamp>
+                <fjs1:serviceVersion>V1.0</fjs1:serviceVersion>
+                <fjs1:language>
+                    <fjs1:code>001</fjs1:code>
+                    <fjs1:designation>Français</fjs1:designation>
+                </fjs1:language>
+            </fjs1:responseHeader>
+            <fjs1:responseStatus>
+                <fjs1:statusCode>0</fjs1:statusCode>
+            </fjs1:responseStatus>
+            <fjs1:getAccountDetailResponse>
+                <fjs1:branch>
+                    <fjs1:code>00001</fjs1:code>
+                    <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                </fjs1:branch>
+                <fjs1:currency>
+                    <fjs1:alphaCode>XAF</fjs1:alphaCode>
+                    <fjs1:numericCode>001</fjs1:numericCode>
+                    <fjs1:designation>FRANC CFA</fjs1:designation>
+                </fjs1:currency>
+                <fjs1:accountNumber>05957051051</fjs1:accountNumber>
+                <fjs1:accountSuffix> </fjs1:accountSuffix>
+                <fjs1:accountClass>
+                    <fjs1:code>37210110</fjs1:code>
+                    <fjs1:designation>CPTE CHQ SA PART RESIDENT</fjs1:designation>
+                </fjs1:accountClass>
+                <fjs1:accountKey>68</fjs1:accountKey>
+                <fjs1:customer>
+                    <fjs1:customerNumber>0595705</fjs1:customerNumber>
+                    <fjs1:displayedName>TOUKAM RODRIGUE CHRISTIAN</fjs1:displayedName>
+                </fjs1:customer>
+                <fjs1:accountDesignation>COMPTES CHEQUES</fjs1:accountDesignation>
+                <fjs1:service>
+                    <fjs1:code>1100</fjs1:code>
+                    <fjs1:designation>Front Office</fjs1:designation>
+                </fjs1:service>
+                <fjs1:accountSide>I</fjs1:accountSide>
+                <fjs1:matchingCode>0</fjs1:matchingCode>
+                <fjs1:accountType>
+                    <fjs1:code>304</fjs1:code>
+                    <fjs1:designation>C/C nrm, Menages</fjs1:designation>
+                </fjs1:accountType>
+                <fjs1:accountSubjectToInterestCalculation>O</fjs1:accountSubjectToInterestCalculation>
+                <fjs1:codeForInterestLadderPrinting>D</fjs1:codeForInterestLadderPrinting>
+                <fjs1:accountStatementCode>M</fjs1:accountStatementCode>
+                <fjs1:taxableAccount>true</fjs1:taxableAccount>
+                <fjs1:accountNotToBePurged>false</fjs1:accountNotToBePurged>
+                <fjs1:pendingClosure>false</fjs1:pendingClosure>
+                <fjs1:directCreditCeiling>0</fjs1:directCreditCeiling>
+                <fjs1:thresholdForReorderingCheques>1</fjs1:thresholdForReorderingCheques>
+                <fjs1:closedAccount>false</fjs1:closedAccount>
+                <fjs1:openingDate>2019-02-01-05:00</fjs1:openingDate>
+                <fjs1:lastModificationDate>2022-09-02-04:00</fjs1:lastModificationDate>
+                <fjs1:modificationSheetNumber>23</fjs1:modificationSheetNumber>
+                <fjs1:accountSubjectToDeductionAtSource>0</fjs1:accountSubjectToDeductionAtSource>
+                <fjs1:accountingBalance>515463.0000</fjs1:accountingBalance>
+                <fjs1:valueDateBalance>0.0000</fjs1:valueDateBalance>
+                <fjs1:historyBalance>0.0000</fjs1:historyBalance>
+                <fjs1:interestCalculationBalance>0.0000</fjs1:interestCalculationBalance>
+                <fjs1:indicativeBalance>460463.0000</fjs1:indicativeBalance>
+                <fjs1:unavailableFundsWithoutDirectCredit>0.0000</fjs1:unavailableFundsWithoutDirectCredit>
+                <fjs1:unavailableDirectCreditFunds>0.0000</fjs1:unavailableDirectCreditFunds>
+                <fjs1:dailyUnavailableFundsWithoutDirectCredit>0.0000</fjs1:dailyUnavailableFundsWithoutDirectCredit>
+                <fjs1:dailyUnavailableDirectCreditFunds>0.0000</fjs1:dailyUnavailableDirectCreditFunds>
+                <fjs1:debitTurnovers>28707547.0000</fjs1:debitTurnovers>
+                <fjs1:creditTurnovers>29223010.0000</fjs1:creditTurnovers>
+                <fjs1:lastMovementDate>2022-12-12-05:00</fjs1:lastMovementDate>
+                <fjs1:lastCreditDate>2022-12-01-05:00</fjs1:lastCreditDate>
+                <fjs1:lastDebitDate>2022-12-12-05:00</fjs1:lastDebitDate>
+                <fjs1:userWhoInitiated>
+                    <fjs1:code>AUTO</fjs1:code>
+                    <fjs1:name>TRAITEMENT AUTOMATIQUE</fjs1:name>
+                    <fjs1:forcingLevel>0</fjs1:forcingLevel>
+                    <fjs1:language>
+                        <fjs1:code>001</fjs1:code>
+                        <fjs1:designation>Français</fjs1:designation>
+                    </fjs1:language>
+                </fjs1:userWhoInitiated>
+                <fjs1:frequencyOfDebitInterestCalculation>M</fjs1:frequencyOfDebitInterestCalculation>
+                <fjs1:transferToDebtRecoveryProcedure>N</fjs1:transferToDebtRecoveryProcedure>
+                <fjs1:mergeBranch>
+                    <fjs1:code>     </fjs1:code>
+                </fjs1:mergeBranch>
+                <fjs1:mergeCurrency>
+                    <fjs1:numericCode>   </fjs1:numericCode>
+                </fjs1:mergeCurrency>
+                <fjs1:mergeClass>
+                    <fjs1:code> </fjs1:code>
+                </fjs1:mergeClass>
+                <fjs1:mergeAccountNumber> </fjs1:mergeAccountNumber>
+                <fjs1:mergeAccountSuffix> </fjs1:mergeAccountSuffix>
+                <fjs1:frequencyOfCreditInterestCalculation>M</fjs1:frequencyOfCreditInterestCalculation>
+                <fjs1:lastMatchingPairAllocated> </fjs1:lastMatchingPairAllocated>
+                <fjs1:lastDebitMovementDate>2022-09-26-04:00</fjs1:lastDebitMovementDate>
+                <fjs1:beginningOfOccasionalInstalment>2022-12-12-05:00</fjs1:beginningOfOccasionalInstalment>
+                <fjs1:realTimeTransferCode>O</fjs1:realTimeTransferCode>
+                <fjs1:checkDigitDeclared>68</fjs1:checkDigitDeclared>
+                <fjs1:product>
+                    <fjs1:code>105</fjs1:code>
+                    <fjs1:designation>COMPTES CHEQUES</fjs1:designation>
+                    <fjs1:productAttribute>ACCOUNT PRODUCT</fjs1:productAttribute>
+                </fjs1:product>
+                <fjs1:accountPledging> </fjs1:accountPledging>
+                <fjs1:chequeDeliveryMethod>B</fjs1:chequeDeliveryMethod>
+                <fjs1:defaultChequeBookType>02</fjs1:defaultChequeBookType>
+                <fjs1:branchThatDeliveredChequeBook>
+                    <fjs1:code>00001</fjs1:code>
+                    <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                </fjs1:branchThatDeliveredChequeBook>
+                <fjs1:reasonForAccountClosure> </fjs1:reasonForAccountClosure>
+                <fjs1:userWhoCreated>
+                    <fjs1:code>FELA</fjs1:code>
+                    <fjs1:name>FELATA AHMED AICHA</fjs1:name>
+                    <fjs1:forcingLevel>6</fjs1:forcingLevel>
+                    <fjs1:language>
+                        <fjs1:code>001</fjs1:code>
+                        <fjs1:designation>Français</fjs1:designation>
+                    </fjs1:language>
+                </fjs1:userWhoCreated>
+                <fjs1:branchWhereTheAccountWasCreated>
+                    <fjs1:code>00001</fjs1:code>
+                    <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                </fjs1:branchWhereTheAccountWasCreated>
+                <fjs1:branchFromAccountInformationForm>
+                    <fjs1:code>00001</fjs1:code>
+                    <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                </fjs1:branchFromAccountInformationForm>
+                <fjs1:lastBranchThatHeldTheAccount>
+                    <fjs1:code>00001</fjs1:code>
+                    <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                </fjs1:lastBranchThatHeldTheAccount>
+                <fjs1:chequeAddressType> </fjs1:chequeAddressType>
+                <fjs1:chequeAddressCode> </fjs1:chequeAddressCode>
+                <fjs1:iBANAccountKey>34</fjs1:iBANAccountKey>
+                <fjs1:temporaryOpening>N</fjs1:temporaryOpening>
+                <fjs1:amountOfReservedFunds>0.0000</fjs1:amountOfReservedFunds>
+                <fjs1:indicativeBalanceUpdatedByFundReservation>true</fjs1:indicativeBalanceUpdatedByFundReservation>
+                <fjs1:freeInputAmount2>0.0000</fjs1:freeInputAmount2>
+                <fjs1:accountStatementDeliveryMethod>1</fjs1:accountStatementDeliveryMethod>
+                <fjs1:freeInputField2> </fjs1:freeInputField2>
+                <fjs1:freeInputField3> </fjs1:freeInputField3>
+                <fjs1:lastAccountCurrency>
+                    <fjs1:numericCode>   </fjs1:numericCode>
+                </fjs1:lastAccountCurrency>
+                <fjs1:jointAccount>false</fjs1:jointAccount>
+                <fjs1:responsibleCustomer> </fjs1:responsibleCustomer>
+                <fjs1:stoppages>
+                    <fjs1:stoppage>
+                        <fjs1:stoppageType>2</fjs1:stoppageType>
+                        <fjs1:account>
+                            <fjs1:accountNumber>
+                                <fjs1:internalFormatAccountOurBranch>
+                                    <fjs1:branch>
+                                        <fjs1:code>00001</fjs1:code>
+                                        <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                                    </fjs1:branch>
+                                    <fjs1:currency>
+                                        <fjs1:alphaCode>XAF</fjs1:alphaCode>
+                                        <fjs1:numericCode>001</fjs1:numericCode>
+                                        <fjs1:designation>FRANC CFA</fjs1:designation>
+                                    </fjs1:currency>
+                                    <fjs1:account>05957051051</fjs1:account>
+                                    <fjs1:suffix> </fjs1:suffix>
+                                </fjs1:internalFormatAccountOurBranch>
+                                <fjs1:ibanFormatAccount>
+                                    <fjs1:value>CM2110005000010595705105168</fjs1:value>
+                                </fjs1:ibanFormatAccount>
+                            </fjs1:accountNumber>
+                            <fjs1:accountClass>
+                                <fjs1:value>37210110</fjs1:value>
+                                <fjs1:comparisonOperator>EQUALS</fjs1:comparisonOperator>
+                            </fjs1:accountClass>
+                            <fjs1:customer>
+                                <fjs1:customer>
+                                    <fjs1:customerNumber>0595705</fjs1:customerNumber>
+                                    <fjs1:displayedName>TOUKAM RODRIGUE CHRISTIAN</fjs1:displayedName>
+                                </fjs1:customer>
+                                <fjs1:customerType>1</fjs1:customerType>
+                                <fjs1:activeProfile>
+                                    <fjs1:code>110</fjs1:code>
+                                    <fjs1:designation>Personnel</fjs1:designation>
+                                </fjs1:activeProfile>
+                                <fjs1:nationalIdentifier> </fjs1:nationalIdentifier>
+                                <fjs1:customerOfficer>
+                                    <fjs1:code>240</fjs1:code>
+                                    <fjs1:name>GAKAM JEAN</fjs1:name>
+                                </fjs1:customerOfficer>
+                            </fjs1:customer>
+                        </fjs1:account>
+                        <fjs1:stoppage>
+                            <fjs1:code>06</fjs1:code>
+                            <fjs1:designation>CPTE EN INSTANCE OUVERTURE</fjs1:designation>
+                        </fjs1:stoppage>
+                        <fjs1:startDate>
+                            <fjs1:date1>2019-10-15-04:00</fjs1:date1>
+                            <fjs1:comparator>EQUALS</fjs1:comparator>
+                        </fjs1:startDate>
+                        <fjs1:status>L</fjs1:status>
+                        <fjs1:stoppageEndDate>
+                            <fjs1:date1>2019-10-23-04:00</fjs1:date1>
+                            <fjs1:comparator>EQUALS</fjs1:comparator>
+                        </fjs1:stoppageEndDate>
+                        <fjs1:stoppageEndUser>
+                            <fjs1:code>KET1</fjs1:code>
+                            <fjs1:name>KETCHA VIRGINIE CLAIRE</fjs1:name>
+                            <fjs1:forcingLevel>7</fjs1:forcingLevel>
+                            <fjs1:language>
+                                <fjs1:code>001</fjs1:code>
+                                <fjs1:designation>Français</fjs1:designation>
+                            </fjs1:language>
+                        </fjs1:stoppageEndUser>
+                        <fjs1:creationUser>
+                            <fjs1:code>KET1</fjs1:code>
+                            <fjs1:name>KETCHA VIRGINIE CLAIRE</fjs1:name>
+                            <fjs1:forcingLevel>7</fjs1:forcingLevel>
+                            <fjs1:language>
+                                <fjs1:code>001</fjs1:code>
+                                <fjs1:designation>Français</fjs1:designation>
+                            </fjs1:language>
+                        </fjs1:creationUser>
+                        <fjs1:stoppageEndReason>DOSSIER CONFORME</fjs1:stoppageEndReason>
+                    </fjs1:stoppage>
+                </fjs1:stoppages>
+                <fjs1:availableBalance>460463.0000</fjs1:availableBalance>
+            </fjs1:getAccountDetailResponse>
+        </fjs1:getAccountDetailResponseFlow>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Body>
+        <fjs1:getCustomerDetailResponseFlow xmlns:fjs1="http://soprabanking.com/amplitude">
+            <fjs1:responseHeader>
+                <fjs1:requestId>1</fjs1:requestId>
+                <fjs1:responseId>809</fjs1:responseId>
+                <fjs1:timestamp>2023-02-21T05:33:00.31670-05:00</fjs1:timestamp>
+                <fjs1:serviceVersion>V1.0</fjs1:serviceVersion>
+                <fjs1:language>
+                    <fjs1:code>001</fjs1:code>
+                    <fjs1:designation>Français</fjs1:designation>
+                </fjs1:language>
+            </fjs1:responseHeader>
+            <fjs1:responseStatus>
+                <fjs1:statusCode>0</fjs1:statusCode>
+            </fjs1:responseStatus>
+            <fjs1:getCustomerDetailResponse>
+                <fjs1:customerCode>0595705</fjs1:customerCode>
+                <fjs1:customerType>1</fjs1:customerType>
+                <fjs1:language>
+                    <fjs1:code>001</fjs1:code>
+                    <fjs1:designation>Français</fjs1:designation>
+                </fjs1:language>
+                <fjs1:titleCode>
+                    <fjs1:code>01</fjs1:code>
+                    <fjs1:designation>Monsieur</fjs1:designation>
+                </fjs1:titleCode>
+                <fjs1:lastname>TOUKAM</fjs1:lastname>
+                <fjs1:nameToReturn>TOUKAM RODRIGUE CHRISTIAN</fjs1:nameToReturn>
+                <fjs1:abbreviation> </fjs1:abbreviation>
+                <fjs1:freeFieldCode1>
+                    <fjs1:code>J</fjs1:code>
+                    <fjs1:designation>JOUR</fjs1:designation>
+                </fjs1:freeFieldCode1>
+                <fjs1:freeFieldCode2>
+                    <fjs1:code>10</fjs1:code>
+                    <fjs1:designation>Yaoundé</fjs1:designation>
+                </fjs1:freeFieldCode2>
+                <fjs1:freeFieldCode3>
+                    <fjs1:code>AUCUN</fjs1:code>
+                    <fjs1:designation>Aucun</fjs1:designation>
+                </fjs1:freeFieldCode3>
+                <fjs1:situation>
+                    <fjs1:nationalityCode>
+                        <fjs1:code>001</fjs1:code>
+                        <fjs1:designation>CAMEROUNAIS</fjs1:designation>
+                    </fjs1:nationalityCode>
+                    <fjs1:countryOfResidence>
+                        <fjs1:code>001</fjs1:code>
+                        <fjs1:designation>CAMEROUN</fjs1:designation>
+                    </fjs1:countryOfResidence>
+                </fjs1:situation>
+                <fjs1:fatca>
+                    <fjs1:fatcaStatus>
+                        <fjs1:fatcaStatusCode> </fjs1:fatcaStatusCode>
+                    </fjs1:fatcaStatus>
+                    <fjs1:crsStatus>
+                        <fjs1:crsStatusCode> </fjs1:crsStatusCode>
+                    </fjs1:crsStatus>
+                </fjs1:fatca>
+                <fjs1:specificInformation>
+                    <fjs1:individualSpecInfo>
+                        <fjs1:individualGeneralInfo>
+                            <fjs1:firstname>RODRIGUE CHRISTIAN</fjs1:firstname>
+                            <fjs1:middlename> </fjs1:middlename>
+                            <fjs1:thirdname> </fjs1:thirdname>
+                            <fjs1:familyStatusCode>
+                                <fjs1:code>C</fjs1:code>
+                                <fjs1:designation>Celibataire</fjs1:designation>
+                            </fjs1:familyStatusCode>
+                            <fjs1:holderLegalCapacity>
+                                <fjs1:code>2</fjs1:code>
+                                <fjs1:designation>MAJEUR</fjs1:designation>
+                            </fjs1:holderLegalCapacity>
+                        </fjs1:individualGeneralInfo>
+                        <fjs1:birth>
+                            <fjs1:holderSex>M</fjs1:holderSex>
+                            <fjs1:maidenName> </fjs1:maidenName>
+                            <fjs1:birthDate>1984-09-27-04:00</fjs1:birthDate>
+                            <fjs1:birthCity>YAOUNDE</fjs1:birthCity>
+                            <fjs1:birthCounty>MFOUNDI</fjs1:birthCounty>
+                            <fjs1:birthRegion> </fjs1:birthRegion>
+                            <fjs1:birthCountry>
+                                <fjs1:code>001</fjs1:code>
+                                <fjs1:designation>CAMEROUN</fjs1:designation>
+                            </fjs1:birthCountry>
+                            <fjs1:birthTownCode> </fjs1:birthTownCode>
+                        </fjs1:birth>
+                        <fjs1:idPaper>
+                            <fjs1:type>
+                                <fjs1:code>CNI</fjs1:code>
+                                <fjs1:designation>CARTE NATIONALE IDENTITE</fjs1:designation>
+                            </fjs1:type>
+                            <fjs1:idPaperNumber>117201983</fjs1:idPaperNumber>
+                            <fjs1:idPaperDeliveryDate>2014-09-09-04:00</fjs1:idPaperDeliveryDate>
+                            <fjs1:idPaperDeliveryPlace>YAOUNDE</fjs1:idPaperDeliveryPlace>
+                            <fjs1:organisationWhichDeliver>DGSN</fjs1:organisationWhichDeliver>
+                            <fjs1:idPaperValidityDate>2024-09-09-04:00</fjs1:idPaperValidityDate>
+                            <fjs1:nationalIdentifier> </fjs1:nationalIdentifier>
+                        </fjs1:idPaper>
+                        <fjs1:family>
+                            <fjs1:spouseType> </fjs1:spouseType>
+                            <fjs1:spouseCode> </fjs1:spouseCode>
+                            <fjs1:numberOfChildren>0</fjs1:numberOfChildren>
+                            <fjs1:customerFamilyRelationshipCode> </fjs1:customerFamilyRelationshipCode>
+                        </fjs1:family>
+                        <fjs1:otherAttributes>
+                            <fjs1:holderMotherName>TCHOUNGA</fjs1:holderMotherName>
+                        </fjs1:otherAttributes>
+                    </fjs1:individualSpecInfo>
+                </fjs1:specificInformation>
+                <fjs1:generalAttributes>
+                    <fjs1:branchCode>
+                        <fjs1:code>00001</fjs1:code>
+                        <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                    </fjs1:branchCode>
+                    <fjs1:customerOfficer>
+                        <fjs1:code>240</fjs1:code>
+                        <fjs1:name>GAKAM JEAN</fjs1:name>
+                    </fjs1:customerOfficer>
+                    <fjs1:qualityCode>
+                        <fjs1:code>02</fjs1:code>
+                        <fjs1:designation>MEDIUM LEVEL</fjs1:designation>
+                    </fjs1:qualityCode>
+                    <fjs1:taxableCustomer>true</fjs1:taxableCustomer>
+                    <fjs1:internalCategoryCode>
+                        <fjs1:code>U</fjs1:code>
+                        <fjs1:designation>PARTI NAT. SALARIES</fjs1:designation>
+                    </fjs1:internalCategoryCode>
+                    <fjs1:statisticNumber> </fjs1:statisticNumber>
+                    <fjs1:sponsorCustomerCode> </fjs1:sponsorCustomerCode>
+                </fjs1:generalAttributes>
+                <fjs1:reportingAttributes>
+                    <fjs1:economicAgentCode>
+                        <fjs1:code>8111</fjs1:code>
+                        <fjs1:designation>ACTIVITES DES ETABL.DE CREDITS</fjs1:designation>
+                    </fjs1:economicAgentCode>
+                    <fjs1:activityFieldCode>
+                        <fjs1:code>K7435</fjs1:code>
+                        <fjs1:designation>AUTRES ACTIV.SERVICES FOURNIS</fjs1:designation>
+                    </fjs1:activityFieldCode>
+                    <fjs1:gradingAgreement>N</fjs1:gradingAgreement>
+                    <fjs1:gradingAgreementAmount>0.0000</fjs1:gradingAgreementAmount>
+                    <fjs1:securityIssuer>N</fjs1:securityIssuer>
+                    <fjs1:internationalOperationsIndicator>N</fjs1:internationalOperationsIndicator>
+                    <fjs1:creditInfoCentre>
+                        <fjs1:customerRelationshipRisk>
+                            <fjs1:code>0</fjs1:code>
+                        </fjs1:customerRelationshipRisk>
+                        <fjs1:validationDateOfCustomerRelationshipRisk>2022-12-12-05:00</fjs1:validationDateOfCustomerRelationshipRisk>
+                        <fjs1:userCodewhoValidatedcustomerRelationshipRisk>CIPRRC</fjs1:userCodewhoValidatedcustomerRelationshipRisk>
+                        <fjs1:creditInfoCentreRegistrationNumber>0595705</fjs1:creditInfoCentreRegistrationNumber>
+                        <fjs1:creditInfoCentreKey> </fjs1:creditInfoCentreKey>
+                    </fjs1:creditInfoCentre>
+                </fjs1:reportingAttributes>
+                <fjs1:paymentMethods>
+                    <fjs1:chequeBookFacilitySuspension>N</fjs1:chequeBookFacilitySuspension>
+                    <fjs1:withdrawalOfCreditCard>N</fjs1:withdrawalOfCreditCard>
+                </fjs1:paymentMethods>
+                <fjs1:additionnalInformation>
+                    <fjs1:deletionCode>N</fjs1:deletionCode>
+                    <fjs1:userWhoCreated>FELA</fjs1:userWhoCreated>
+                    <fjs1:userWhoInitiated>FELA</fjs1:userWhoInitiated>
+                    <fjs1:creationDate>2019-02-01-05:00</fjs1:creationDate>
+                    <fjs1:lastModificationDate>2019-07-24-04:00</fjs1:lastModificationDate>
+                    <fjs1:modificationSheetNumber>2</fjs1:modificationSheetNumber>
+                    <fjs1:realTimeTransferCode>O</fjs1:realTimeTransferCode>
+                </fjs1:additionnalInformation>
+                <fjs1:addressesDetail>
+                    <fjs1:customerAddressDetail>
+                        <fjs1:identifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:addressType>
+                                <fjs1:code>C</fjs1:code>
+                                <fjs1:designation>Adresse courrier</fjs1:designation>
+                            </fjs1:addressType>
+                        </fjs1:identifier>
+                        <fjs1:language>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>Français</fjs1:designation>
+                        </fjs1:language>
+                        <fjs1:addressFormat>
+                            <fjs1:code>GE</fjs1:code>
+                            <fjs1:designation>Format geographique</fjs1:designation>
+                        </fjs1:addressFormat>
+                        <fjs1:addressLine1> </fjs1:addressLine1>
+                        <fjs1:addressLine2>NKOLBISSON</fjs1:addressLine2>
+                        <fjs1:addressLine3>BEATITUDE</fjs1:addressLine3>
+                        <fjs1:city>YAOUNDE</fjs1:city>
+                        <fjs1:postalCode> </fjs1:postalCode>
+                        <fjs1:deliveryOffice> </fjs1:deliveryOffice>
+                        <fjs1:poBox> </fjs1:poBox>
+                        <fjs1:postalSector> </fjs1:postalSector>
+                        <fjs1:postalSectorDesignation> </fjs1:postalSectorDesignation>
+                        <fjs1:countryCode>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>CAMEROUN</fjs1:designation>
+                        </fjs1:countryCode>
+                        <fjs1:counterCode>
+                            <fjs1:code>     </fjs1:code>
+                        </fjs1:counterCode>
+                        <fjs1:emailAddress> </fjs1:emailAddress>
+                        <fjs1:numberOfReturnMailsForWrongAddress>0</fjs1:numberOfReturnMailsForWrongAddress>
+                        <fjs1:county>MFOUNDI</fjs1:county>
+                        <fjs1:region>CENTRE</fjs1:region>
+                    </fjs1:customerAddressDetail>
+                    <fjs1:customerAddressDetail>
+                        <fjs1:identifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:addressType>
+                                <fjs1:code>D</fjs1:code>
+                                <fjs1:designation>Adresse declarative client</fjs1:designation>
+                            </fjs1:addressType>
+                        </fjs1:identifier>
+                        <fjs1:language>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>Français</fjs1:designation>
+                        </fjs1:language>
+                        <fjs1:addressFormat>
+                            <fjs1:code>GE</fjs1:code>
+                            <fjs1:designation>Format geographique</fjs1:designation>
+                        </fjs1:addressFormat>
+                        <fjs1:addressLine1> </fjs1:addressLine1>
+                        <fjs1:addressLine2>NKOLBISSON</fjs1:addressLine2>
+                        <fjs1:addressLine3>BEATITUDE</fjs1:addressLine3>
+                        <fjs1:city>YAOUNDE</fjs1:city>
+                        <fjs1:postalCode> </fjs1:postalCode>
+                        <fjs1:deliveryOffice> </fjs1:deliveryOffice>
+                        <fjs1:poBox> </fjs1:poBox>
+                        <fjs1:postalSector> </fjs1:postalSector>
+                        <fjs1:postalSectorDesignation> </fjs1:postalSectorDesignation>
+                        <fjs1:countryCode>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>CAMEROUN</fjs1:designation>
+                        </fjs1:countryCode>
+                        <fjs1:counterCode>
+                            <fjs1:code>     </fjs1:code>
+                        </fjs1:counterCode>
+                        <fjs1:emailAddress> </fjs1:emailAddress>
+                        <fjs1:numberOfReturnMailsForWrongAddress>0</fjs1:numberOfReturnMailsForWrongAddress>
+                        <fjs1:county>MFOUNDI</fjs1:county>
+                        <fjs1:region>CENTRE</fjs1:region>
+                    </fjs1:customerAddressDetail>
+                </fjs1:addressesDetail>
+                <fjs1:phoneNumbers>
+                    <fjs1:customerPhoneNumber>
+                        <fjs1:customer>
+                            <fjs1:customerNumber>0595705</fjs1:customerNumber>
+                            <fjs1:displayedName>TOUKAM RODRIGUE CHRISTIAN</fjs1:displayedName>
+                        </fjs1:customer>
+                        <fjs1:phoneType>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>Tel 1 courrier particulier</fjs1:designation>
+                        </fjs1:phoneType>
+                        <fjs1:phoneNumber>673 49 82 92</fjs1:phoneNumber>
+                        <fjs1:formatOfTelephoneNumber>
+                            <fjs1:code>999</fjs1:code>
+                            <fjs1:designation>TYPE N° TEL PAR DEFAUT</fjs1:designation>
+                        </fjs1:formatOfTelephoneNumber>
+                    </fjs1:customerPhoneNumber>
+                    <fjs1:customerPhoneNumber>
+                        <fjs1:customer>
+                            <fjs1:customerNumber>0595705</fjs1:customerNumber>
+                            <fjs1:displayedName>TOUKAM RODRIGUE CHRISTIAN</fjs1:displayedName>
+                        </fjs1:customer>
+                        <fjs1:phoneType>
+                            <fjs1:code>003</fjs1:code>
+                            <fjs1:designation>Tel 2 courrier particulier</fjs1:designation>
+                        </fjs1:phoneType>
+                        <fjs1:phoneNumber>696 32 31 45</fjs1:phoneNumber>
+                        <fjs1:formatOfTelephoneNumber>
+                            <fjs1:code>999</fjs1:code>
+                            <fjs1:designation>TYPE N° TEL PAR DEFAUT</fjs1:designation>
+                        </fjs1:formatOfTelephoneNumber>
+                    </fjs1:customerPhoneNumber>
+                </fjs1:phoneNumbers>
+                <fjs1:emailAdresses>
+                    <fjs1:customerEmailAddress>
+                        <fjs1:customer>
+                            <fjs1:customerNumber>0595705</fjs1:customerNumber>
+                            <fjs1:displayedName>TOUKAM RODRIGUE CHRISTIAN</fjs1:displayedName>
+                        </fjs1:customer>
+                        <fjs1:mailType>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>Email courrier particulier</fjs1:designation>
+                        </fjs1:mailType>
+                        <fjs1:email>toukam22002@yahoo.fr</fjs1:email>
+                    </fjs1:customerEmailAddress>
+                </fjs1:emailAdresses>
+                <fjs1:freeAttributesDetail>
+                    <fjs1:customerFreeAttributeDetail>
+                        <fjs1:customerFreeAttributeIdentifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:identifier>01</fjs1:identifier>
+                        </fjs1:customerFreeAttributeIdentifier>
+                        <fjs1:additionalDataValue>
+                            <fjs1:alphanumeric>JESSY</fjs1:alphanumeric>
+                        </fjs1:additionalDataValue>
+                        <fjs1:typeOfLinkedAttribute>R</fjs1:typeOfLinkedAttribute>
+                        <fjs1:customerFreeAttributeInfo>
+                            <fjs1:code>01</fjs1:code>
+                            <fjs1:designation>PRENOM DE LA MERE</fjs1:designation>
+                            <fjs1:dataFormat>A</fjs1:dataFormat>
+                            <fjs1:totalLengthIfAlpha>40</fjs1:totalLengthIfAlpha>
+                            <fjs1:managementMethod>1</fjs1:managementMethod>
+                        </fjs1:customerFreeAttributeInfo>
+                    </fjs1:customerFreeAttributeDetail>
+                    <fjs1:customerFreeAttributeDetail>
+                        <fjs1:customerFreeAttributeIdentifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:identifier>010</fjs1:identifier>
+                        </fjs1:customerFreeAttributeIdentifier>
+                        <fjs1:additionalDataValue/>
+                        <fjs1:customerFreeAttributeInfo>
+                            <fjs1:code>010</fjs1:code>
+                        </fjs1:customerFreeAttributeInfo>
+                    </fjs1:customerFreeAttributeDetail>
+                    <fjs1:customerFreeAttributeDetail>
+                        <fjs1:customerFreeAttributeIdentifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:identifier>02</fjs1:identifier>
+                        </fjs1:customerFreeAttributeIdentifier>
+                        <fjs1:additionalDataValue>
+                            <fjs1:alphanumeric>PND</fjs1:alphanumeric>
+                        </fjs1:additionalDataValue>
+                        <fjs1:typeOfLinkedAttribute>R</fjs1:typeOfLinkedAttribute>
+                        <fjs1:customerFreeAttributeInfo>
+                            <fjs1:code>02</fjs1:code>
+                            <fjs1:designation>NOM DU PERE</fjs1:designation>
+                            <fjs1:dataFormat>A</fjs1:dataFormat>
+                            <fjs1:totalLengthIfAlpha>40</fjs1:totalLengthIfAlpha>
+                            <fjs1:managementMethod>1</fjs1:managementMethod>
+                        </fjs1:customerFreeAttributeInfo>
+                    </fjs1:customerFreeAttributeDetail>
+                    <fjs1:customerFreeAttributeDetail>
+                        <fjs1:customerFreeAttributeIdentifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:identifier>03</fjs1:identifier>
+                        </fjs1:customerFreeAttributeIdentifier>
+                        <fjs1:additionalDataValue>
+                            <fjs1:alphanumeric>PND</fjs1:alphanumeric>
+                        </fjs1:additionalDataValue>
+                        <fjs1:typeOfLinkedAttribute>R</fjs1:typeOfLinkedAttribute>
+                        <fjs1:customerFreeAttributeInfo>
+                            <fjs1:code>03</fjs1:code>
+                            <fjs1:designation>PRENOM DU PERE</fjs1:designation>
+                            <fjs1:dataFormat>A</fjs1:dataFormat>
+                            <fjs1:totalLengthIfAlpha>40</fjs1:totalLengthIfAlpha>
+                            <fjs1:managementMethod>1</fjs1:managementMethod>
+                        </fjs1:customerFreeAttributeInfo>
+                    </fjs1:customerFreeAttributeDetail>
+                    <fjs1:customerFreeAttributeDetail>
+                        <fjs1:customerFreeAttributeIdentifier>
+                            <fjs1:customerCode>0595705</fjs1:customerCode>
+                            <fjs1:identifier>04</fjs1:identifier>
+                        </fjs1:customerFreeAttributeIdentifier>
+                        <fjs1:additionalDataValue>
+                            <fjs1:alphanumeric>001</fjs1:alphanumeric>
+                        </fjs1:additionalDataValue>
+                        <fjs1:typeOfLinkedAttribute>R</fjs1:typeOfLinkedAttribute>
+                        <fjs1:customerFreeAttributeInfo>
+                            <fjs1:code>04</fjs1:code>
+                            <fjs1:designation>PAYS DELIVRANCE PIECE IDENTITE</fjs1:designation>
+                            <fjs1:dataFormat>A</fjs1:dataFormat>
+                            <fjs1:totalLengthIfAlpha>40</fjs1:totalLengthIfAlpha>
+                            <fjs1:managementMethod>1</fjs1:managementMethod>
+                        </fjs1:customerFreeAttributeInfo>
+                    </fjs1:customerFreeAttributeDetail>
+                </fjs1:freeAttributesDetail>
+                <fjs1:activeProfile>
+                    <fjs1:activeProfile>
+                        <fjs1:code>110</fjs1:code>
+                        <fjs1:designation>Personnel</fjs1:designation>
+                    </fjs1:activeProfile>
+                </fjs1:activeProfile>
+            </fjs1:getCustomerDetailResponse>
+        </fjs1:getCustomerDetailResponseFlow>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
