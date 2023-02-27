@@ -10,6 +10,7 @@ import java.util.*;
 
 import com.afriland.cbsobjects.dtos.customer.Client;
 import com.afriland.cbsobjects.dtos.customer.Customer;
+import com.afriland.cbsobjects.dtos.others.TokenCBS;
 import com.afriland.cbsobjects.enums.MessageResponse;
 import com.afriland.cbsobjects.responses.CustomerResponse;
 import com.afriland.cbsobjects.responses.DataResponse;
@@ -19,15 +20,18 @@ import com.afriland.cbsobjects.services.ICustomerServices;
 import com.afriland.cbsobjects.services.ITokenServices;
 import com.afriland.cbsobjects.utils.CustomClientHttpRequestFactory;
 import com.afriland.cbsobjects.utils.DateUtil;
+import com.afriland.cbsobjects.utils.ObjectCustomerMapper;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.gson.Gson;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
@@ -62,9 +66,13 @@ public class CustomerServices implements ICustomerServices {
     @Value("${user.code}")
     private String user_code;
 
-    @Autowired
-    private ITokenServices tokenService;
+    private final ITokenServices tokenService;
+    private final ObjectCustomerMapper objectCustomerMapper;
 
+    public CustomerServices(ITokenServices tokenService, ObjectCustomerMapper objectCustomerMapper){
+        this.tokenService = tokenService;
+        this.objectCustomerMapper = objectCustomerMapper;
+    }
 
     public String getBaseLocation() {
         return env.getProperty("FILE_PORTAL_HOME"); //get the default config directory location
@@ -138,33 +146,33 @@ public class CustomerServices implements ICustomerServices {
                 "</soapenv:Envelope>";
     }
 
-    public ResponseEntity<ClientResponse> getCustomerDetail(String codeclient){
-
+    public ResponseEntity<ClientResponse> getCustomerDetailMapper(String content){
 
             List<Client> responses = new ArrayList<>();
 
             try {
-                Path archDirVenti = Paths.get("uploads", "customerResponse3.xml");
-                File file = new File(archDirVenti.toUri());
+                /*
+                    Path archDirVenti = Paths.get("uploads", "customerResponseTyp3.xml");
+                    File file = new File(archDirVenti.toUri());
+                    content = Files.readString(archDirVenti);
+                */
 
-                String content = Files.readString(archDirVenti);
-            //    log.info("Process file content: " + content);
-            //    String reduceContent = StringUtils.substringBetween(content, "<SOAP-ENV:Body>", "</SOAP-ENV:Body>");
-            //    log.info("Process file reduceContent: " + reduceContent.strip());
+                // Removing space at the beginning and the end of responseString
+                content.stripLeading();
+                content.stripTrailing();
 
                 JacksonXmlModule module = new JacksonXmlModule();
                 module.setDefaultUseWrapper(false);
                 XmlMapper xmlMapper = new XmlMapper(module);
                 xmlMapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT,DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY );
+                xmlMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 
                 Envelope envelope = xmlMapper.readValue(content, Envelope.class);
-                log.info("Process file value: " + new Gson().toJson(envelope));
 
 
                 Optional<Body> optBody = Optional.ofNullable(envelope.getBody());
                 if(optBody.isEmpty()) return new ResponseEntity<ClientResponse>(new ClientResponse(Integer.toString(HttpStatus.INTERNAL_SERVER_ERROR.value()),
                         HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), MessageResponse.NULL_OBJET.value(), responses), HttpStatus.INTERNAL_SERVER_ERROR);
-
                 Body body = optBody.get();
 
                 // CustomerDetailResponseFlow
@@ -195,9 +203,16 @@ public class CustomerServices implements ICustomerServices {
                 }
 
                 ResponseStatus responseStatus = optResponseStatus.get();
+                String codeStatus = responseStatus.getStatusCode();
+                switch (codeStatus) {
+                    case "-1":
+                        return new ResponseEntity<ClientResponse>(new ClientResponse(Integer.toString(HttpStatus.INTERNAL_SERVER_ERROR.value()), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase() + " : " + MessageResponse.FAILED_OPERATION, responseStatus.getMessages().toString(), responses), HttpStatus.INTERNAL_SERVER_ERROR);
+                    case "1":
+                        return new ResponseEntity<ClientResponse>(new ClientResponse(Integer.toString(HttpStatus.BAD_REQUEST.value()), HttpStatus.BAD_REQUEST.getReasonPhrase() + " : " + MessageResponse.FAILED_OPERATION, responseStatus.getMessages().toString(), responses), HttpStatus.BAD_REQUEST);
 
+                }
 
-                // CustomerDetailResponse
+                // CustomerDetailResponse perform
                 Optional<GetCustomerDetailResponse> optGetCustomerDetailResponse = Optional.ofNullable(customerDetailResponseFlow.getGetCustomerDetailResponse());
                 if(optGetCustomerDetailResponse.isEmpty()){
                     return new ResponseEntity<>(new ClientResponse(Integer.toString(HttpStatus.INTERNAL_SERVER_ERROR.value()),
@@ -205,252 +220,8 @@ public class CustomerServices implements ICustomerServices {
                 }
 
                 GetCustomerDetailResponse customerDetailResponse = optGetCustomerDetailResponse.get();
+                responses.add(objectCustomerMapper.apply(customerDetailResponse));
 
-                Client client = new Client();
-                client.setMatricule(customerDetailResponse.getCustomerCode());
-                client.setCustomerName(customerDetailResponse.getNameToReturn());
-                client.setDepartementNaissance(customerDetailResponse.getSpecificInformation()
-                        .getIndividualSpecInfo().getBirth().getBirthCounty());
-
-                try{
-                    client.setSegment(customerDetailResponse.getGeneralAttributes().getSegment().getCode());
-                }
-                catch(Exception e) {
-                    client.setSegment("");
-                }
-
-                try{
-                    List<CustomerAddressDetail> adresse = customerDetailResponse.getAddressesDetail().getCustomerAddressDetail();
-                    if(!adresse.isEmpty()){
-
-                        client.setAdresse1(adresse.get(0).getAddressLine1());
-                        client.setAdresse2(adresse.get(0).getAddressLine2());
-                        client.setAdresse3(adresse.get(0).getAddressLine3());
-
-                    }
-                }
-                catch(Exception e){
-                    client.setAdresse1("");
-                    client.setAdresse2("");
-                    client.setAdresse3("");
-                }
-
-                client.setProfil(customerDetailResponse.getActiveProfile().getActiveProfile().getDesignation());
-                client.setCodeProfil(customerDetailResponse.getActiveProfile().getActiveProfile().getCode());
-
-                // TODO: Add Exception catching
-                client.setAgenceClient(customerDetailResponse.getGeneralAttributes().getBranchCode().getDesignation());
-                client.setCodeAgenceClient(customerDetailResponse.getGeneralAttributes().getBranchCode().getCode());
-
-                client.setSexe(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo().getBirth().getHolderSex());
-                client.setCodeGes(customerDetailResponse.getGeneralAttributes().getCustomerOfficer().getCode());
-                client.setNomGes(customerDetailResponse.getGeneralAttributes().getCustomerOfficer().getName());
-                client.setTypeClient(customerDetailResponse.getCustomerType());
-                client.setTypePieceIdentite(customerDetailResponse.getSpecificInformation()
-                        .getIndividualSpecInfo().getIdPaper().getType().getCode());
-
-                // TODO: forme juridique, categorie interne, titre
-                client.setFormeJuridique("");
-                client.setCategorieInterne(customerDetailResponse.getGeneralAttributes().getInternalCategoryCode().getDesignation());
-                client.setCodeCategorieInterne(customerDetailResponse.getGeneralAttributes().getInternalCategoryCode().getCode());
-
-                client.setTitre(customerDetailResponse.getFreeFieldCode3().getCode());
-                client.setCategorieBanqueCentrale(customerDetailResponse.getReportingAttributes().getEconomicAgentCode().getDesignation());
-                client.setSecteurActivite(customerDetailResponse.getReportingAttributes().getActivityFieldCode().getDesignation());
-                client.setPaysResidence(customerDetailResponse.getSituation().getCountryOfResidence().getDesignation());
-                client.setUtiCreation(customerDetailResponse.getAdditionnalInformation().getUserWhoCreated());
-                client.setDateCreation(DateUtil.parse(customerDetailResponse.getAdditionnalInformation().getCreationDate(),
-                        DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setUtiModification(customerDetailResponse.getAdditionnalInformation().getUserWhoInitiated());
-                client.setDateModification(DateUtil.parse(customerDetailResponse.getAdditionnalInformation().getLastModificationDate(),
-                        DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setNomMere(customerDetailResponse.getSpecificInformation()
-                        .getIndividualSpecInfo().getOtherAttributes().getHolderMotherName());
-                try{
-                    List<CustomerFreeAttributeDetail> customerFreeAttributeDetail =  customerDetailResponse.getFreeAttributesDetail()
-                            .getCustomerFreeAttributeDetail();
-
-                    client.setPrenomMere(customerFreeAttributeDetail.get(0).getAdditionalDataValue().getAlphanumeric());
-                    client.setPrenomPere(customerFreeAttributeDetail.get(3).getAdditionalDataValue().getAlphanumeric());
-                    client.setNomPere(customerFreeAttributeDetail.get(2).getAdditionalDataValue().getAlphanumeric());
-
-                }
-                catch(Exception e) {
-                    client.setPrenomMere("");
-                    client.setPrenomPere("");
-                    client.setNomPere("");
-                }
-
-                // TODO: raison sociale
-                client.setRaisonSociale("");
-                client.setRaisonSociale2("");
-
-                client.setRegistreCommerce("");
-                client.setNumeroPatente("");
-                client.setValiditePatente("");
-                client.setGroupe("");
-                client.setNumeroIdentiteSociale("");
-                client.setNumeroIdentiteFiscale("");
-                client.setNumeroCasier("");
-                client.setEmailClient(customerDetailResponse.getEmailAdresses().getCustomerEmailAddress().getEmail());
-                client.setResidence("");
-                client.setPaysResidence(customerDetailResponse.getSituation().getCountryOfResidence().getDesignation());
-                client.setLangue(customerDetailResponse.getLanguage().getDesignation());
-                client.setIntitule(customerDetailResponse.getTitleCode().getDesignation());
-
-                client.setNom(customerDetailResponse.getLastname());
-                client.setNomSimple(customerDetailResponse.getLastname());
-                client.setPrenom(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getIndividualGeneralInfo().getFirstname());
-                client.setNomJeuneFille("");
-                client.setNationalite(customerDetailResponse.getSituation().getNationalityCode().getDesignation());
-                client.setTypePiece(customerDetailResponse.getSpecificInformation()
-                        .getIndividualSpecInfo().getIdPaper().getType().getCode());
-                client.setNumeroPiece(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getIdPaper().getIdPaperNumber());
-                client.setDateDelivPiece(DateUtil.parse(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getIdPaper().getIdPaperDeliveryDate(), DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setLieudelivPiece(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getIdPaper().getIdPaperDeliveryPlace());
-                client.setDateValiditePiece(DateUtil.parse(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getIdPaper().getIdPaperValidityDate(), DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setDateNaissance(DateUtil.parse(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getBirth().getBirthDate(), DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setVilleNaissance(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo().getBirth()
-                        .getBirthCity());
-                client.setPaysNaiss(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo().getBirth()
-                        .getBirthCountry().getDesignation());
-
-                try{
-                    List<CustomerPhoneNumber> customerPhoneNumber = customerDetailResponse.getPhoneNumbers().getCustomerPhoneNumber();
-                    Optional<CustomerPhoneNumber> optCustomerPhoneNumber1 = Optional.ofNullable(customerPhoneNumber.get(0));
-                    Optional<CustomerPhoneNumber> optCustomerPhoneNumber2 = Optional.ofNullable(customerPhoneNumber.get(1));
-                    if(!optCustomerPhoneNumber1.isEmpty()) {
-                        client.setNumTelephone1(optCustomerPhoneNumber1.get().getPhoneNumber());
-                    }
-                    if(!optCustomerPhoneNumber2.isEmpty()) {
-                        client.setNumTelephone2(optCustomerPhoneNumber2.get().getPhoneNumber());
-                    }
-                }
-                catch(Exception e){
-                    client.setNumTelephone1("");
-                    client.setNumTelephone2("");
-                }
-
-                client.setTelDir("");
-                client.setEmailDir("");
-                client.setProfession("");
-                client.setRevenu("");
-                client.setRegimeMat("");
-                client.setEmployeur("");
-                client.setSitmat(customerDetailResponse.getSpecificInformation().getIndividualSpecInfo()
-                        .getIndividualGeneralInfo().getFamilyStatusCode().getDesignation());
-                // TODO request to specificInformation->individualSpecInfo->family->spouseCode
-                client.setNomConjoint("");
-                try {
-                    client.setDateNaissanceConj(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                }
-                catch(Exception e){
-                    log.info(e.getMessage());
-                }
-                client.setVilleNaissanceConj("");
-
-                // TODO: lien cotitulaires de comptes
-                client.setTypeLienCotitu("");
-                client.setNumCompte("");
-
-                // TODO: raison sociale
-                client.setRaisonSocial("");
-                client.setSiegeSocial("");
-                client.setSigle("");
-                client.setSecteurActivite("");
-                client.setNumImmatri("");
-                client.setDateImmatri(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setLieuImmatri("");
-                client.setAutoriteImm("");
-                client.setNumIdentSocial("");
-                client.setNumContribuable("");
-                client.setDateNumContri(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setLieuNumContri("");
-                client.setNumPatente("");
-                client.setDateValPatente(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                client.setLieuNumPatente("");
-
-                try{
-                    client.setChiffreAffaire(Double.parseDouble(""));
-                }
-                catch(Exception e){
-                    client.setChiffreAffaire(0.0);
-                }
-
-                try{
-                    client.setEffectif(Integer.parseInt(""));
-                }
-                catch(Exception e){
-                    client.setEffectif(0);
-                }
-
-                client.setOrigineFonds("");
-                client.setTel("");
-                client.setSiteWeb("");
-                client.setFax("");
-                client.setLocalisation1("");
-                client.setLocalisation2("");
-                client.setVille("");
-                client.setNomContact("");
-                client.setPrenomContact("");
-                client.setTelContact("");
-                client.setEmailContact("");
-                client.setNomDir1("");
-                client.setNationaliteDir1("");
-                client.setTypePieceDir1("");
-                client.setNumeroPieceDir1("");
-                client.setLieudelivPieceDir1("");
-
-                try{
-                    client.setDateDelivPieceDir1(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                    client.setDateValiditePieceDir1(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                    client.setDateNaissanceDir1(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                }
-                catch(Exception e) {
-                    log.info(e.getMessage());
-                }
-                client.setVilleNaissanceDir1("");
-                client.setPaysNaissDir1("");
-                client.setNumTelephoneDir1("");
-                client.setEmailDir1("");
-                client.setIntituleDir1("");
-                client.setFonctionDir1("");
-                client.setNomDir2("");
-                client.setNationaliteDir2("");
-                client.setTypePieceDir2("");
-                client.setNumeroPieceDir2("");
-                client.setLieudelivPieceDir2("");
-
-                try{
-                    client.setDateDelivPieceDir2(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                    client.setDateValiditePieceDir2(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                    client.setDateNaissanceDir1(DateUtil.parse("", DateUtil.DATE_HOUR_FORMAT_UP));
-                }
-                catch(Exception e){
-                    log.info(e.getMessage());
-                }
-                client.setVilleNaissanceDir2("");
-                client.setPaysNaissDir2("");
-                client.setNumTelephoneDir2("");
-                client.setEmailDir2("");
-                client.setIntituleDir2("");
-                client.setFonctionDir2("");
-                client.setDateDelivPieceDir1Modif("");
-                client.setDateValiditePieceDir1Modif("");
-                client.setDateNaissanceDir1Modif("");
-                client.setDateDelivPieceDir2Modif("");
-                client.setDateValiditePieceDir2Modif("");
-                client.setDateNaissanceDir2Modif("");
-                client.setAutresContact(new ArrayList<>());
-                client.setAutresDirigeants(new ArrayList<>());
-
-                responses.add(client);
 
             } catch (Exception e) {
                 throw new RuntimeException(e);
@@ -459,47 +230,56 @@ public class CustomerServices implements ICustomerServices {
                 HttpStatus.OK.getReasonPhrase() + " : " + MessageResponse.SUCCESSFULL_OPERATION, "", responses),
                 HttpStatus.OK);
     }
-    public ResponseEntity<CustomerResponse> getCustomerDetail2(String codeclient){
-        List<Customer> responses = new ArrayList<>();
+    public ResponseEntity<ClientResponse> getCustomerDetail(String codeClient){
+
+        List<Client> responses = new ArrayList<>();
 
         try {
-            String check = checkBuildedCurrentObject("getCustomerDetail", codeclient);
+            String check = checkBuildedCurrentObject("getCustomerDetail", codeClient);
             if (StringUtils.isNotBlank(check)) {
-                return new ResponseEntity<>(new CustomerResponse(Integer.toString(HttpStatus.PRECONDITION_FAILED.value()), HttpStatus.PRECONDITION_FAILED.getReasonPhrase() + " : " + check, "", responses), HttpStatus.PRECONDITION_FAILED);
+                return new ResponseEntity<>(new ClientResponse(Integer.toString(HttpStatus.PRECONDITION_FAILED.value()),
+                        HttpStatus.PRECONDITION_FAILED.getReasonPhrase() + " : " + check, "", responses), HttpStatus.PRECONDITION_FAILED);
             }
 
-            RestTemplate restTemplate = new RestTemplate(new CustomClientHttpRequestFactory(1200, 1200, true));
-
+            RestTemplate restTemplate = new RestTemplate(new CustomClientHttpRequestFactory(1200, 3000, true));
             // create headers
             HttpHeaders headers = new HttpHeaders();
 
-            // TODO: Check for a 401 after every API request
-            // TODO: Get a new token - once only
-            // TODO: Retry the API request - once only
+            // TODO: 2- Get a new token - once only
             //get token
             ResponseEntity<DataResponse> responseToken = tokenService.getToken();
             DataResponse dataResponse = responseToken.getBody();
             String token = dataResponse.getData();
-
             System.out.println("*********** token *********** : " + token);
+
+            // TODO: 3- Retry the API request - once only
+
+            // TODO: 1- Check for a 401 after every API request
+
             headers.setBearerAuth(token);
             headers.set("SOAPAction","getCustomerDetail");
             headers.setContentType(MediaType.APPLICATION_XML);
-            String xml = payloadAIFGetCustomerId(codeclient);
+            String xml = payloadAIFGetCustomerId(codeClient);
             System.out.println(xml);
-            HttpEntity entity = new HttpEntity<String>(xml, headers);
+            HttpEntity entity = new HttpEntity<>(xml, headers);
 
             // send POST request
             ResponseEntity<String> response = restTemplate.exchange(url_base+"/getCustomerDetail", HttpMethod.POST, entity, String.class);
+            System.out.println("*********** response *********** : " + response);
             String responseString =response.getBody();
             System.out.println("*********** responseString *********** : " + responseString);
 
 
+
+            return getCustomerDetailMapper(responseString);
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<CustomerResponse>(new CustomerResponse(Integer.toString(HttpStatus.INTERNAL_SERVER_ERROR.value()), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e.getMessage(), responses), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<ClientResponse>(new ClientResponse(Integer.toString(HttpStatus.INTERNAL_SERVER_ERROR.value()), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(), e.getMessage(), responses), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return null;
+
     }
 
 }

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Body>
+        <fjs1:getCustomerDetailResponseFlow xmlns:fjs1="http://soprabanking.com/amplitude">
+            <fjs1:responseHeader>
+                <fjs1:requestId>1</fjs1:requestId>
+                <fjs1:responseId>877</fjs1:responseId>
+                <fjs1:timestamp>2023-02-22T04:49:32.85648-05:00</fjs1:timestamp>
+                <fjs1:serviceVersion>V1.0</fjs1:serviceVersion>
+                <fjs1:language>
+                    <fjs1:code>001</fjs1:code>
+                    <fjs1:designation>Français</fjs1:designation>
+                </fjs1:language>
+            </fjs1:responseHeader>
+            <fjs1:responseStatus>
+                <fjs1:statusCode>0</fjs1:statusCode>
+            </fjs1:responseStatus>
+            <fjs1:getCustomerDetailResponse>
+                <fjs1:customerCode>0004868</fjs1:customerCode>
+                <fjs1:customerType>3</fjs1:customerType>
+                <fjs1:language>
+                    <fjs1:code>001</fjs1:code>
+                    <fjs1:designation>Français</fjs1:designation>
+                </fjs1:language>
+                <fjs1:titleCode>
+                    <fjs1:code>52</fjs1:code>
+                    <fjs1:designation>ETS</fjs1:designation>
+                </fjs1:titleCode>
+                <fjs1:lastname>INTERNATIONAL AND DOMESTIC BUSINESS</fjs1:lastname>
+                <fjs1:nameToReturn>INTERNATIONAL AND DOMESTIC BUSINESS INTER AND DOMESTIC BUS CORP</fjs1:nameToReturn>
+                <fjs1:abbreviation> </fjs1:abbreviation>
+                <fjs1:freeFieldCode1>
+                    <fjs1:code>10</fjs1:code>
+                    <fjs1:designation>Yaoundé</fjs1:designation>
+                </fjs1:freeFieldCode1>
+                <fjs1:freeFieldCode2>
+                    <fjs1:code>10</fjs1:code>
+                    <fjs1:designation>Yaoundé</fjs1:designation>
+                </fjs1:freeFieldCode2>
+                <fjs1:freeFieldCode3>
+                    <fjs1:code>AUCUN</fjs1:code>
+                    <fjs1:designation>Aucun</fjs1:designation>
+                </fjs1:freeFieldCode3>
+                <fjs1:externalIdentifier> </fjs1:externalIdentifier>
+                <fjs1:situation>
+                    <fjs1:nationalityCode>
+                        <fjs1:code>001</fjs1:code>
+                        <fjs1:designation>CAMEROUNAIS</fjs1:designation>
+                    </fjs1:nationalityCode>
+                    <fjs1:countryOfResidence>
+                        <fjs1:code>001</fjs1:code>
+                        <fjs1:designation>CAMEROUN</fjs1:designation>
+                    </fjs1:countryOfResidence>
+                </fjs1:situation>
+                <fjs1:fatca>
+                    <fjs1:fatcaStatus>
+                        <fjs1:fatcaStatusCode> </fjs1:fatcaStatusCode>
+                    </fjs1:fatcaStatus>
+                    <fjs1:crsStatus>
+                        <fjs1:crsStatusCode> </fjs1:crsStatusCode>
+                    </fjs1:crsStatus>
+                </fjs1:fatca>
+                <fjs1:specificInformation>
+                    <fjs1:corporateSpecInfo>
+                        <fjs1:corporateGeneralInfo>
+                            <fjs1:tradeNameToDeclare>INTERNATIONAL AND DOMESTIC BUSINESS</fjs1:tradeNameToDeclare>
+                            <fjs1:secondTradeNameToDeclare> </fjs1:secondTradeNameToDeclare>
+                            <fjs1:companyCreationDate>1996-09-29-04:00</fjs1:companyCreationDate>
+                            <fjs1:legalFormCode>
+                                <fjs1:code>08</fjs1:code>
+                                <fjs1:designation>EURL  Entr. unipersonnelle res</fjs1:designation>
+                            </fjs1:legalFormCode>
+                            <fjs1:statutoryAuditor1> </fjs1:statutoryAuditor1>
+                            <fjs1:statutoryAuditor2> </fjs1:statutoryAuditor2>
+                        </fjs1:corporateGeneralInfo>
+                        <fjs1:corporateId>
+                            <fjs1:nationalIdentifier> </fjs1:nationalIdentifier>
+                            <fjs1:socialIdentityNumber>M099600007036X</fjs1:socialIdentityNumber>
+                            <fjs1:taxIdentityNumber> </fjs1:taxIdentityNumber>
+                            <fjs1:abbreviation> </fjs1:abbreviation>
+                        </fjs1:corporateId>
+                        <fjs1:legalInformation>
+                            <fjs1:tradeRegisterNumber>96 G 2264</fjs1:tradeRegisterNumber>
+                            <fjs1:tradeRegisterDeliveryPlace> </fjs1:tradeRegisterDeliveryPlace>
+                            <fjs1:licenseNumber>M099600007036X</fjs1:licenseNumber>
+                            <fjs1:validityDateOfLicense>2012-12-31-05:00</fjs1:validityDateOfLicense>
+                        </fjs1:legalInformation>
+                        <fjs1:groupAndJob>
+                            <fjs1:customersGroup>
+                                <fjs1:code> </fjs1:code>
+                            </fjs1:customersGroup>
+                            <fjs1:subgroup>
+                                <fjs1:customersGroupCode> </fjs1:customersGroupCode>
+                                <fjs1:customersSubgroupCode> </fjs1:customersSubgroupCode>
+                            </fjs1:subgroup>
+                            <fjs1:job>
+                                <fjs1:jobCode> </fjs1:jobCode>
+                            </fjs1:job>
+                            <fjs1:subjob>
+                                <fjs1:jobCode> </fjs1:jobCode>
+                                <fjs1:subjobCode> </fjs1:subjobCode>
+                            </fjs1:subjob>
+                        </fjs1:groupAndJob>
+                    </fjs1:corporateSpecInfo>
+                </fjs1:specificInformation>
+                <fjs1:generalAttributes>
+                    <fjs1:branchCode>
+                        <fjs1:code>00001</fjs1:code>
+                        <fjs1:designation>FIRST BANK HIPPODROME</fjs1:designation>
+                    </fjs1:branchCode>
+                    <fjs1:customerOfficer>
+                        <fjs1:code>398</fjs1:code>
+                        <fjs1:name>ONANA 2</fjs1:name>
+                    </fjs1:customerOfficer>
+                    <fjs1:qualityCode>
+                        <fjs1:code>99</fjs1:code>
+                        <fjs1:designation>Autres</fjs1:designation>
+                    </fjs1:qualityCode>
+                    <fjs1:taxableCustomer>true</fjs1:taxableCustomer>
+                    <fjs1:internalCategoryCode>
+                        <fjs1:code>B</fjs1:code>
+                        <fjs1:designation>ENTREPRISES PRIV.NATIONALES</fjs1:designation>
+                    </fjs1:internalCategoryCode>
+                    <fjs1:statisticNumber>803384 R</fjs1:statisticNumber>
+                    <fjs1:sponsorCustomerCode> </fjs1:sponsorCustomerCode>
+                </fjs1:generalAttributes>
+                <fjs1:reportingAttributes>
+                    <fjs1:economicAgentCode>
+                        <fjs1:code>6290</fjs1:code>
+                        <fjs1:designation>AUTRES COMMERCES</fjs1:designation>
+                    </fjs1:economicAgentCode>
+                    <fjs1:activityFieldCode>
+                        <fjs1:code>B0501</fjs1:code>
+                        <fjs1:designation>PECHE ARTISANALE</fjs1:designation>
+                    </fjs1:activityFieldCode>
+                    <fjs1:gradingAgreement> </fjs1:gradingAgreement>
+                    <fjs1:securityIssuer> </fjs1:securityIssuer>
+                    <fjs1:internationalOperationsIndicator>N</fjs1:internationalOperationsIndicator>
+                    <fjs1:creditInfoCentre>
+                        <fjs1:userCodewhoValidatedcustomerRelationshipRisk> </fjs1:userCodewhoValidatedcustomerRelationshipRisk>
+                        <fjs1:creditInfoCentreRegistrationNumber>0004868</fjs1:creditInfoCentreRegistrationNumber>
+                        <fjs1:creditInfoCentreCodeToDeclare>2</fjs1:creditInfoCentreCodeToDeclare>
+                        <fjs1:creditInfoCentreKey>N</fjs1:creditInfoCentreKey>
+                    </fjs1:creditInfoCentre>
+                </fjs1:reportingAttributes>
+                <fjs1:paymentMethods>
+                    <fjs1:chequeBookFacilitySuspension>O</fjs1:chequeBookFacilitySuspension>
+                    <fjs1:withdrawalOfCreditCard> </fjs1:withdrawalOfCreditCard>
+                </fjs1:paymentMethods>
+                <fjs1:additionnalInformation>
+                    <fjs1:deletionCode>O</fjs1:deletionCode>
+                    <fjs1:userWhoCreated>AUTO</fjs1:userWhoCreated>
+                    <fjs1:userWhoInitiated>TOMI</fjs1:userWhoInitiated>
+                    <fjs1:creationDate>1995-07-30-04:00</fjs1:creationDate>
+                    <fjs1:lastModificationDate>2018-07-17-04:00</fjs1:lastModificationDate>
+                    <fjs1:modificationSheetNumber>3</fjs1:modificationSheetNumber>
+                    <fjs1:realTimeTransferCode>O</fjs1:realTimeTransferCode>
+                </fjs1:additionnalInformation>
+                <fjs1:addressesDetail>
+                    <fjs1:customerAddressDetail>
+                        <fjs1:identifier>
+                            <fjs1:customerCode>0004868</fjs1:customerCode>
+                            <fjs1:addressType>
+                                <fjs1:code>C</fjs1:code>
+                                <fjs1:designation>Adresse courrier</fjs1:designation>
+                            </fjs1:addressType>
+                        </fjs1:identifier>
+                        <fjs1:language>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>Français</fjs1:designation>
+                        </fjs1:language>
+                        <fjs1:addressFormat>
+                            <fjs1:code>GE</fjs1:code>
+                            <fjs1:designation>Format geographique</fjs1:designation>
+                        </fjs1:addressFormat>
+                        <fjs1:addressLine1>BP 326 YAOUNDE</fjs1:addressLine1>
+                        <fjs1:addressLine2>ESSOS</fjs1:addressLine2>
+                        <fjs1:addressLine3>YAOUNDE</fjs1:addressLine3>
+                        <fjs1:city>YAOUNDE</fjs1:city>
+                        <fjs1:postalCode>326</fjs1:postalCode>
+                        <fjs1:deliveryOffice> </fjs1:deliveryOffice>
+                        <fjs1:poBox> </fjs1:poBox>
+                        <fjs1:postalSector> </fjs1:postalSector>
+                        <fjs1:postalSectorDesignation> </fjs1:postalSectorDesignation>
+                        <fjs1:countryCode>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>CAMEROUN</fjs1:designation>
+                        </fjs1:countryCode>
+                        <fjs1:counterCode>
+                            <fjs1:code>     </fjs1:code>
+                        </fjs1:counterCode>
+                        <fjs1:locker>0</fjs1:locker>
+                        <fjs1:emailAddress> </fjs1:emailAddress>
+                        <fjs1:numberOfReturnMailsForWrongAddress>0</fjs1:numberOfReturnMailsForWrongAddress>
+                        <fjs1:county> </fjs1:county>
+                        <fjs1:region> </fjs1:region>
+                    </fjs1:customerAddressDetail>
+                    <fjs1:customerAddressDetail>
+                        <fjs1:identifier>
+                            <fjs1:customerCode>0004868</fjs1:customerCode>
+                            <fjs1:addressType>
+                                <fjs1:code>D</fjs1:code>
+                                <fjs1:designation>Adresse declarative client</fjs1:designation>
+                            </fjs1:addressType>
+                        </fjs1:identifier>
+                        <fjs1:language>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>Français</fjs1:designation>
+                        </fjs1:language>
+                        <fjs1:addressFormat>
+                            <fjs1:code>GE</fjs1:code>
+                            <fjs1:designation>Format geographique</fjs1:designation>
+                        </fjs1:addressFormat>
+                        <fjs1:addressLine1>BP 326 YAOUNDE</fjs1:addressLine1>
+                        <fjs1:addressLine2>ESSOS</fjs1:addressLine2>
+                        <fjs1:addressLine3>YAOUNDE</fjs1:addressLine3>
+                        <fjs1:city>YAOUNDE</fjs1:city>
+                        <fjs1:postalCode>326</fjs1:postalCode>
+                        <fjs1:deliveryOffice> </fjs1:deliveryOffice>
+                        <fjs1:poBox> </fjs1:poBox>
+                        <fjs1:postalSector> </fjs1:postalSector>
+                        <fjs1:postalSectorDesignation> </fjs1:postalSectorDesignation>
+                        <fjs1:countryCode>
+                            <fjs1:code>001</fjs1:code>
+                            <fjs1:designation>CAMEROUN</fjs1:designation>
+                        </fjs1:countryCode>
+                        <fjs1:counterCode>
+                            <fjs1:code>     </fjs1:code>
+                        </fjs1:counterCode>
+                        <fjs1:locker>0</fjs1:locker>
+                        <fjs1:emailAddress> </fjs1:emailAddress>
+                        <fjs1:numberOfReturnMailsForWrongAddress>0</fjs1:numberOfReturnMailsForWrongAddress>
+                        <fjs1:county> </fjs1:county>
+                        <fjs1:region> </fjs1:region>
+                    </fjs1:customerAddressDetail>
+                </fjs1:addressesDetail>
+                <fjs1:phoneNumbers>
+                    <fjs1:customerPhoneNumber>
+                        <fjs1:customer>
+                            <fjs1:customerNumber>0004868</fjs1:customerNumber>
+                            <fjs1:displayedName>INTERNATIONAL AND DOMESTIC BUSINESS INTER AND DOMESTIC BUS CORP</fjs1:displayedName>
+                        </fjs1:customer>
+                        <fjs1:phoneType>
+                            <fjs1:code>002</fjs1:code>
+                            <fjs1:designation>Tel 1 courrier societe</fjs1:designation>
+                        </fjs1:phoneType>
+                        <fjs1:phoneNumber>222224109</fjs1:phoneNumber>
+                    </fjs1:customerPhoneNumber>
+                </fjs1:phoneNumbers>
+                <fjs1:activeProfile>
+                    <fjs1:activeProfile>
+                        <fjs1:code>205</fjs1:code>
+                        <fjs1:designation>CDS Entreprise</fjs1:designation>
+                    </fjs1:activeProfile>
+                </fjs1:activeProfile>
+            </fjs1:getCustomerDetailResponse>
+        </fjs1:getCustomerDetailResponseFlow>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -48,7 +48,7 @@ public class Client implements Serializable{
 	private String registreCommerce;
 	private String validiteRegistreCommerce;
 	private String numeroPatente;
-	private String validitePatente;
+	private Date validitePatente;
 	private String groupe;
 	private String numeroIdentiteSociale;
 	private String numeroIdentiteFiscale;
@@ -159,6 +159,8 @@ public class Client implements Serializable{
     private Date dateCreation;
     private Date dateModification;
     private String segment;
+    private String numeroStatistique;
+    private Boolean taxable;
 
 
     

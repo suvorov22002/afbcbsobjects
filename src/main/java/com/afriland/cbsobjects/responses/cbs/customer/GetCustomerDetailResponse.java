@@ -95,6 +95,7 @@ public class GetCustomerDetailResponse {
     protected FreeFieldCode1 freeFieldCode1;
     protected FreeFieldCode2 freeFieldCode2;
     protected FreeFieldCode3 freeFieldCode3;
+	protected String externalIdentifier;
     protected Situation situation;
     protected Fatca fatca;
     protected SpecificInformation specificInformation;
@@ -107,5 +108,7 @@ public class GetCustomerDetailResponse {
     protected EmailAdresses emailAdresses;
     protected FreeAttributesDetail freeAttributesDetail;
     protected ActiveProfile activeProfile;
+
+    
 
 }

@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class SpecificInformation {
     public IndividualSpecInfo individualSpecInfo;
+    public CorporateSpecInfo corporateSpecInfo;
 }

@@ -4,5 +4,6 @@ import lombok.Data;
 
 @Data
 public class CustomerRelationshipRisk {
-    protected int Code;
+    protected String code;
+    protected String designation;
 }

@@ -10,6 +10,6 @@ public class GeneralAttributes {
     protected boolean taxableCustomer;
     protected InternalCategoryCode internalCategoryCode;
     protected Segment segment;
-    protected Object statisticNumber;
-    protected Object sponsorCustomerCode;
+    protected String statisticNumber;
+    protected String sponsorCustomerCode;
 }

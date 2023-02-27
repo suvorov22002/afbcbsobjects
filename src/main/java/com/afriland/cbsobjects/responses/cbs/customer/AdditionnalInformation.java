@@ -11,6 +11,6 @@ public class AdditionnalInformation {
     protected String UserWhoInitiated;
     protected String CreationDate;
     protected String LastModificationDate;
-    protected int ModificationSheetNumber;
+    protected String ModificationSheetNumber;
     protected String RealTimeTransferCode;
 }

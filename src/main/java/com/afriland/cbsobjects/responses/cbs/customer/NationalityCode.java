@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class NationalityCode {
-    protected int Code;
+    protected String Code;
     protected String Designation;
 }

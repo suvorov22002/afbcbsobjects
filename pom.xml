@@ -294,7 +294,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-<!--
+
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
@@ -309,14 +309,14 @@
 				<configuration>
 					<schemaLanguage>WSDL</schemaLanguage>
 					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-					<generatePackage>com.afriland.cbsobjects.responses.cbs</generatePackage>
+					<generatePackage>com.afriland.cbsobjects.responses.cbs.account</generatePackage>
 					<schemaDirectory>${project.basedir}/src/main/resources/amplitude/wsdl</schemaDirectory>
 					<schemaIncludes>
-						<include>getCustomerDetail.wsdl</include>
+						<include>customersDetails.wsdl</include>
 					</schemaIncludes>
 				</configuration>
 			</plugin>
--->
+
 		</plugins>
 	</build>
 
